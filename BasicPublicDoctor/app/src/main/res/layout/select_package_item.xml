@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tv_normal_crowd"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/qb_px_34"
+    android:layout_marginLeft="@dimen/qb_px_8"
+    android:layout_marginRight="@dimen/qb_px_8"
+    android:background="@color/gray_f3f2f2"
+    android:gravity="center"
+    android:minWidth="@dimen/qb_px_85"
+    android:paddingLeft="@dimen/qb_px_12"
+    android:paddingRight="@dimen/qb_px_12"
+
+    android:textColor="@color/black_040404"
+    android:textSize="16sp">
+
+</TextView>

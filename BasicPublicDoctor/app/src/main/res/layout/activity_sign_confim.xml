@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_default_bg_color"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/status_bar_height"
+        android:background="@color/app_toolBar"></View>
+
+    <include layout="@layout/title_bar"></include>
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_default_bg_color"
+        app:srlEnableLoadMore="false"
+        app:srlEnableRefresh="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/qb_px_8"
+                        android:background="@color/white"
+                        android:orientation="vertical"
+                        android:padding="@dimen/qb_px_12">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <View
+                                android:layout_width="@dimen/qb_px_3"
+                                android:layout_height="match_parent"
+                                android:background="@color/app_toolBar"></View>
+
+                            <TextView
+                                style="@style/text_style_sign_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/qb_px_4"
+                                android:text="甲方（服务者）" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txt_doctor_name"
+                            style="@style/text_style_sign_content"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="家庭医生：乔爱华" />
+
+                        <TextView
+                            android:id="@+id/txt_doctor_tuanduichengyuan"
+                            style="@style/text_style_sign_content"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="团队成员：黄球" />
+
+                        <TextView
+                            android:id="@+id/txt_doctor_phone"
+                            style="@style/text_style_sign_content"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="联系电话：18067885988" />
+
+                        <TextView
+                            android:id="@+id/txt_doctor_jigou"
+                            style="@style/text_style_sign_content"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="服务机构：河海街道社区服务中心" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/qb_px_8"
+                        android:background="@color/white"
+                        android:orientation="vertical"
+                        android:padding="@dimen/qb_px_12">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <View
+                                android:layout_width="@dimen/qb_px_3"
+                                android:layout_height="match_parent"
+                                android:background="@color/app_toolBar"></View>
+
+                            <TextView
+                                style="@style/text_style_sign_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/qb_px_4"
+                                android:text="乙方（服务对象）" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lin_user_con_sign"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lin_user_con"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </ScrollView>
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="@dimen/qb_px_150"
+                android:layout_height="@dimen/qb_px_40"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/qb_px_24"
+                android:layout_marginTop="@dimen/qb_px_40"
+                android:background="@drawable/shape_bg_phone"
+                android:gravity="center"
+                android:text="提交"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</LinearLayout>

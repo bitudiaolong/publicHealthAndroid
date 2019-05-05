@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/qb_px_20"
+    android:paddingRight="@dimen/qb_px_20"
+    android:paddingTop="@dimen/qb_px_18">
+
+    <CheckBox
+        android:visibility="gone"
+        android:id="@+id/cb_select"
+        style="@style/CustomSelectServiceCheckBox"
+        android:layout_width="@dimen/qb_px_26"
+        android:layout_height="@dimen/qb_px_26" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_12"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/qb_px_18">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_service_item"
+                    style="@style/style_tv_333333_17sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="颈部血光或甲状腺彩超" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/qb_px_8"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_project_content"
+                    style="@style/style_tv_333333_16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="每年免费发放的健康宣传单一份每年免费发放的健康宣传单一份" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/qb_px_2"
+                android:layout_marginTop="@dimen/qb_px_8"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/style_tv_333333_16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="频次：" />
+
+                <TextView
+                    android:id="@+id/tv_unit"
+                    style="@style/style_tv_333333_16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2次/年" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/qb_px_8"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/style_tv_333333_16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="费用：" />
+
+                <TextView
+                    android:id="@+id/tv_expenses"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2000"
+                    android:textColor="#ff0000"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/app_default_bg_color" />
+</LinearLayout>

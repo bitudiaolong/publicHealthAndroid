@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="right"
+    tools:openDrawer="right">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/app_default_bg_color"
+            android:orientation="vertical"
+            tools:context=".activity.VisitPlanCrowdActivity">
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/status_bar_height"
+                android:background="@color/app_toolBar"></View>
+
+            <include
+                android:id="@+id/title"
+                layout="@layout/title_bar" />
+
+            <com.scwang.smartrefresh.layout.SmartRefreshLayout
+                android:id="@+id/smart_refresh_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.scwang.smartrefresh.layout.header.ClassicsHeader
+                    android:id="@+id/classic_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rl_crow_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+                    android:id="@+id/classic_footer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lin_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <ImageView
+                android:layout_width="@dimen/qb_px_152"
+                android:layout_height="@dimen/qb_px_144"
+                android:layout_marginTop="@dimen/qb_px_180"
+                android:scaleType="centerInside"
+                android:src="@drawable/bg_crowdlist_nodata" />
+
+            <TextView
+                style="@style/style_tv_d6d6d6_17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/qb_px_12"
+                android:text="暂无人群记录~" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="@dimen/qb_px_300"
+        android:layout_height="match_parent"
+        android:layout_gravity="right">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/status_bar_height"
+                android:background="@color/colorPrimary"></LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginTop="-1dp"
+                android:background="@color/gray_f3f2f2">
+
+                <TextView
+                    style="@style/style_tv_A8A8A8_16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="@dimen/qb_px_19"
+                    android:gravity="center"
+                    android:text="所属人群" />
+
+            </RelativeLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/qb_px_0"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/qb_px_12"
+                    android:paddingRight="@dimen/qb_px_12"
+                    android:paddingTop="@dimen/qb_px_14">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_normal_crowd"
+                            android:layout_width="@dimen/qb_px_85"
+                            android:layout_height="@dimen/qb_px_34"
+                            android:background="@drawable/crowd_list_screen_bg_selector"
+                            android:gravity="center"
+                            android:text="一般人群"
+                            android:textColor="@color/crowd_list_screen_ttcolor_selector"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/iv_normal_crowd_corner"
+                            android:layout_width="@dimen/qb_px_15"
+                            android:layout_height="@dimen/qb_px_17"
+                            android:layout_alignEnd="@+id/tv_normal_crowd"
+                            android:layout_alignParentBottom="true"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/crowdlist_selected_right_corner" />
+
+
+                        <TextView
+                            android:id="@+id/tv_child"
+                            android:layout_width="@dimen/qb_px_85"
+                            android:layout_height="@dimen/qb_px_34"
+                            android:layout_marginLeft="@dimen/qb_px_17"
+                            android:layout_toRightOf="@+id/tv_normal_crowd"
+                            android:background="@drawable/crowd_list_screen_bg_selector"
+                            android:gravity="center"
+                            android:text="儿童"
+                            android:textColor="@color/crowd_list_screen_ttcolor_selector"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/iv_child_corner"
+                            android:layout_width="@dimen/qb_px_15"
+                            android:layout_height="@dimen/qb_px_17"
+                            android:layout_alignEnd="@+id/tv_child"
+                            android:layout_alignParentBottom="true"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/crowdlist_selected_right_corner" />
+
+                        <TextView
+                            android:id="@+id/tv_maternal"
+                            android:layout_width="@dimen/qb_px_85"
+                            android:layout_height="@dimen/qb_px_34"
+                            android:layout_marginLeft="@dimen/qb_px_17"
+                            android:layout_toRightOf="@id/tv_child"
+                            android:background="@drawable/crowd_list_screen_bg_selector"
+                            android:gravity="center"
+                            android:text="孕产妇"
+                            android:textColor="@color/crowd_list_screen_ttcolor_selector"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/iv_maternal_corner"
+                            android:layout_width="@dimen/qb_px_15"
+                            android:layout_height="@dimen/qb_px_17"
+                            android:layout_alignEnd="@+id/tv_maternal"
+                            android:layout_alignParentBottom="true"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/crowdlist_selected_right_corner" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/qb_px_13"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_high_blood_pressure"
+                            android:layout_width="@dimen/qb_px_85"
+                            android:layout_height="@dimen/qb_px_34"
+                            android:background="@drawable/crowd_list_screen_bg_selector"
+                            android:gravity="center"
+                            android:text="高血压"
+                            android:textColor="@color/crowd_list_screen_ttcolor_selector"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/iv_high_blood_pressure_corner"
+                            android:layout_width="@dimen/qb_px_15"
+                            android:layout_height="@dimen/qb_px_17"
+                            android:layout_alignEnd="@+id/tv_high_blood_pressure"
+                            android:layout_alignParentBottom="true"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/crowdlist_selected_right_corner" />
+
+                        <TextView
+                            android:id="@+id/tv_phthisis"
+                            android:layout_width="@dimen/qb_px_85"
+                            android:layout_height="@dimen/qb_px_34"
+                            android:layout_marginLeft="17dp"
+                            android:layout_toRightOf="@+id/tv_high_blood_pressure"
+                            android:background="@drawable/crowd_list_screen_bg_selector"
+                            android:gravity="center"
+                            android:text="肺结核"
+                            android:textColor="@color/crowd_list_screen_ttcolor_selector"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/iv_phthisis_corner"
+                            android:layout_width="@dimen/qb_px_15"
+                            android:layout_height="@dimen/qb_px_17"
+                            android:layout_alignEnd="@+id/tv_phthisis"
+                            android:layout_alignParentBottom="true"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/crowdlist_selected_right_corner" />
+
+                        <TextView
+                            android:id="@+id/tv_diabetes"
+                            android:layout_width="@dimen/qb_px_85"
+                            android:layout_height="@dimen/qb_px_34"
+                            android:layout_marginLeft="@dimen/qb_px_17"
+                            android:layout_toRightOf="@+id/tv_phthisis"
+                            android:background="@drawable/crowd_list_screen_bg_selector"
+                            android:gravity="center"
+                            android:text="糖尿病"
+                            android:textColor="@color/crowd_list_screen_ttcolor_selector"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/iv_diabetes_corner"
+                            android:layout_width="@dimen/qb_px_15"
+                            android:layout_height="@dimen/qb_px_17"
+                            android:layout_alignEnd="@+id/tv_diabetes"
+                            android:layout_alignParentBottom="true"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/crowdlist_selected_right_corner" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/qb_px_13"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_stroke"
+                            android:layout_width="@dimen/qb_px_85"
+                            android:layout_height="@dimen/qb_px_34"
+                            android:background="@drawable/crowd_list_screen_bg_selector"
+                            android:gravity="center"
+                            android:text="脑卒中"
+                            android:textColor="@color/crowd_list_screen_ttcolor_selector"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/iv_stroke_corner"
+                            android:layout_width="@dimen/qb_px_15"
+                            android:layout_height="@dimen/qb_px_17"
+                            android:layout_alignEnd="@+id/tv_stroke"
+                            android:layout_alignParentBottom="true"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/crowdlist_selected_right_corner" />
+
+                        <TextView
+                            android:id="@+id/tv_coronary_heart_disease"
+                            android:layout_width="@dimen/qb_px_85"
+                            android:layout_height="@dimen/qb_px_34"
+                            android:layout_marginLeft="@dimen/qb_px_17"
+                            android:layout_toRightOf="@+id/tv_stroke"
+                            android:background="@drawable/crowd_list_screen_bg_selector"
+                            android:gravity="center"
+                            android:text="冠心病"
+                            android:textColor="@color/crowd_list_screen_ttcolor_selector"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/iv_coronary_heart_disease_corner"
+                            android:layout_width="@dimen/qb_px_15"
+                            android:layout_height="@dimen/qb_px_17"
+                            android:layout_alignEnd="@+id/tv_coronary_heart_disease"
+                            android:layout_alignParentBottom="true"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/crowdlist_selected_right_corner" />
+
+                        <TextView
+                            android:id="@+id/tv_slow_lung_suppository"
+                            android:layout_width="@dimen/qb_px_85"
+                            android:layout_height="@dimen/qb_px_34"
+                            android:layout_marginLeft="@dimen/qb_px_17"
+                            android:layout_toRightOf="@+id/tv_coronary_heart_disease"
+                            android:background="@drawable/crowd_list_screen_bg_selector"
+                            android:gravity="center"
+                            android:text="慢阻肺"
+                            android:textColor="@color/crowd_list_screen_ttcolor_selector"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/iv_slow_lung_suppository_corner"
+                            android:layout_width="@dimen/qb_px_15"
+                            android:layout_height="@dimen/qb_px_17"
+                            android:layout_alignEnd="@+id/tv_slow_lung_suppository"
+                            android:layout_alignParentBottom="true"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/crowdlist_selected_right_corner" />
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/qb_px_13"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_old_people"
+                            android:layout_width="@dimen/qb_px_85"
+                            android:layout_height="@dimen/qb_px_34"
+                            android:background="@drawable/crowd_list_screen_bg_selector"
+                            android:gravity="center"
+                            android:text="老年人"
+                            android:textColor="@color/crowd_list_screen_ttcolor_selector"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/iv_old_people"
+                            android:layout_width="@dimen/qb_px_15"
+                            android:layout_height="@dimen/qb_px_17"
+                            android:layout_alignEnd="@+id/tv_old_people"
+                            android:layout_alignParentBottom="true"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/crowdlist_selected_right_corner" />
+
+                        <TextView
+                            android:id="@+id/tv_dibaohu"
+                            android:layout_width="@dimen/qb_px_85"
+                            android:layout_height="@dimen/qb_px_34"
+                            android:layout_marginLeft="@dimen/qb_px_17"
+                            android:layout_toRightOf="@+id/tv_old_people"
+                            android:background="@drawable/crowd_list_screen_bg_selector"
+                            android:gravity="center"
+                            android:text="低保户"
+                            android:textColor="@color/crowd_list_screen_ttcolor_selector"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/iv_dibaohu"
+                            android:layout_width="@dimen/qb_px_15"
+                            android:layout_height="@dimen/qb_px_17"
+                            android:layout_alignEnd="@+id/tv_dibaohu"
+                            android:layout_alignParentBottom="true"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/crowdlist_selected_right_corner" />
+
+                        <TextView
+                            android:id="@+id/tv_wubaohu"
+                            android:layout_width="@dimen/qb_px_85"
+                            android:layout_height="@dimen/qb_px_34"
+                            android:layout_marginLeft="@dimen/qb_px_17"
+                            android:layout_toRightOf="@+id/tv_dibaohu"
+                            android:background="@drawable/crowd_list_screen_bg_selector"
+                            android:gravity="center"
+                            android:text="五保户"
+                            android:textColor="@color/crowd_list_screen_ttcolor_selector"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/iv_wubaohu"
+                            android:layout_width="@dimen/qb_px_15"
+                            android:layout_height="@dimen/qb_px_17"
+                            android:layout_alignEnd="@+id/tv_wubaohu"
+                            android:layout_alignParentBottom="true"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/crowdlist_selected_right_corner" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/qb_px_13"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_disabled"
+                            android:layout_width="@dimen/qb_px_85"
+                            android:layout_height="@dimen/qb_px_34"
+                            android:background="@drawable/crowd_list_screen_bg_selector"
+                            android:gravity="center"
+                            android:text="残疾人"
+                            android:textColor="@color/crowd_list_screen_ttcolor_selector"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/iv_disabled_corner"
+                            android:layout_width="@dimen/qb_px_15"
+                            android:layout_height="@dimen/qb_px_17"
+                            android:layout_alignEnd="@+id/tv_disabled"
+                            android:layout_alignParentBottom="true"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/crowdlist_selected_right_corner" />
+
+
+                        <TextView
+                            android:id="@+id/tv_create_profile_low_income"
+                            android:layout_width="@dimen/qb_px_124"
+                            android:layout_height="@dimen/qb_px_34"
+                            android:layout_marginLeft="@dimen/qb_px_17"
+                            android:layout_toRightOf="@+id/tv_disabled"
+                            android:background="@drawable/crowd_list_screen_bg_selector"
+                            android:gravity="center"
+                            android:text="建档立卡贫困户"
+                            android:textColor="@color/crowd_list_screen_ttcolor_selector"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/iv_create_profile_low_income_corner"
+                            android:layout_width="@dimen/qb_px_15"
+                            android:layout_height="@dimen/qb_px_17"
+                            android:layout_alignEnd="@+id/tv_create_profile_low_income"
+                            android:layout_alignParentBottom="true"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/crowdlist_selected_right_corner" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/qb_px_13"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_beyond_profile_low_income"
+                            android:layout_width="@dimen/qb_px_85"
+                            android:layout_height="@dimen/qb_px_34"
+                            android:background="@drawable/crowd_list_screen_bg_selector"
+                            android:gravity="center"
+                            android:text="卡外贫困"
+                            android:textColor="@color/crowd_list_screen_ttcolor_selector"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/iv_beyond_profile_low_income_corner"
+                            android:layout_width="@dimen/qb_px_15"
+                            android:layout_height="@dimen/qb_px_17"
+                            android:layout_alignEnd="@+id/tv_beyond_profile_low_income"
+                            android:layout_alignParentBottom="true"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/crowdlist_selected_right_corner" />
+
+                        <TextView
+                            android:id="@+id/tv_special_birth_plan_family"
+                            android:layout_width="@dimen/qb_px_141"
+                            android:layout_height="@dimen/qb_px_34"
+                            android:layout_marginLeft="@dimen/qb_px_17"
+                            android:layout_toRightOf="@+id/tv_beyond_profile_low_income"
+                            android:background="@drawable/crowd_list_screen_bg_selector"
+                            android:gravity="center"
+                            android:text="计划生育特殊家庭"
+                            android:textColor="@color/crowd_list_screen_ttcolor_selector"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/iv_special_birth_plan_family_corner"
+                            android:layout_width="@dimen/qb_px_15"
+                            android:layout_height="@dimen/qb_px_17"
+                            android:layout_alignEnd="@+id/tv_special_birth_plan_family"
+                            android:layout_alignParentBottom="true"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/crowdlist_selected_right_corner" />
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/qb_px_13"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_mental_disease"
+                            android:layout_width="@dimen/qb_px_120"
+                            android:layout_height="@dimen/qb_px_34"
+                            android:background="@drawable/crowd_list_screen_bg_selector"
+                            android:gravity="center"
+                            android:text="严重精神障碍"
+                            android:textColor="@color/crowd_list_screen_ttcolor_selector"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/iv_mental_disease"
+                            android:layout_width="@dimen/qb_px_15"
+                            android:layout_height="@dimen/qb_px_17"
+                            android:layout_alignEnd="@+id/tv_mental_disease"
+                            android:layout_alignParentBottom="true"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/crowdlist_selected_right_corner" />
+
+                        <TextView
+                            android:id="@+id/tv_respiratory_disease"
+                            android:layout_width="@dimen/qb_px_141"
+                            android:layout_height="@dimen/qb_px_34"
+                            android:layout_marginLeft="@dimen/qb_px_17"
+                            android:layout_toRightOf="@+id/tv_mental_disease"
+                            android:background="@drawable/crowd_list_screen_bg_selector"
+                            android:gravity="center"
+                            android:text="慢性呼吸道疾病"
+                            android:textColor="@color/crowd_list_screen_ttcolor_selector"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/iv_respiratory_disease"
+                            android:layout_width="@dimen/qb_px_15"
+                            android:layout_height="@dimen/qb_px_17"
+                            android:layout_alignEnd="@+id/tv_respiratory_disease"
+                            android:layout_alignParentBottom="true"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/crowdlist_selected_right_corner" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </ScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/qb_px_56"
+                android:layout_marginBottom="@dimen/qb_px_0">
+
+                <Button
+                    android:id="@+id/btn_reset"
+                    android:layout_width="@dimen/qb_px_0"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:text="重置"
+                    android:textColor="@color/blue_26B2CB"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/btn_confirm"
+                    android:layout_width="@dimen/qb_px_0"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/blue_26B2CB"
+                    android:text="确认"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.design.widget.NavigationView>
+
+</android.support.v4.widget.DrawerLayout>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_default_bg_color"
+    android:orientation="vertical">
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srlClassicsSpinnerStyle="Scale"
+            app:srlDrawableArrowSize="@dimen/qb_px_20"
+            app:srlDrawableMarginRight="@dimen/qb_px_20"
+            app:srlDrawableProgressSize="@dimen/qb_px_20"
+            app:srlEnableLastTime="true"
+            app:srlFinishDuration="500"
+            app:srlPrimaryColor="@color/app_default_bg_color"
+            app:srlTextSizeTime="@dimen/qb_px_10"
+            app:srlTextSizeTitle="16sp"
+            app:srlTextTimeMarginTop="@dimen/qb_px_2" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/app_default_bg_color"
+            android:gravity="center_horizontal"
+            android:paddingTop="@dimen/qb_px_5">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/qb_px_50"
+                android:gravity="center"
+                android:text="333"
+                android:visibility="gone" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_videos_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:scrollbars="none"></android.support.v7.widget.RecyclerView>
+
+
+            <LinearLayout
+                android:id="@+id/ll_empty"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <ImageView
+                    android:layout_width="@dimen/qb_px_152"
+                    android:layout_height="@dimen/qb_px_144"
+                    android:layout_marginTop="@dimen/qb_px_100"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/icon_news_no_data" />
+
+                <TextView
+                    style="@style/style_tv_d6d6d6_17sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/qb_px_12"
+                    android:text="亲，还没有相关信息哦~" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+            android:id="@+id/classics_footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srlClassicsSpinnerStyle="Scale"
+            app:srlPrimaryColor="@color/app_default_bg_color" />
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</LinearLayout>

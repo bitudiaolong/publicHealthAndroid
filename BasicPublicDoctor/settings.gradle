@@ -1,0 +1,5 @@
+include ':app', ':utils', 'basehttplibrary', ':magicindicator', 'basecameraui', ':GCFrame', ':GCFrameTV', ':GCFrameWidget'
+include ':IMKit'
+include ':IMLib'
+include ':CallKit'
+include ':CallLib'

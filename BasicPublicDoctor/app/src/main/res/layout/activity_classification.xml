@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/status_bar_height"
+        android:background="@color/app_toolBar"></View>
+
+    <include layout="@layout/title_bar"></include>
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        app:srlEnableLoadMore="false"
+        app:srlEnableRefresh="false">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <cn.lankton.flowlayout.FlowLayout
+                android:id="@+id/flow_layout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/qb_px_12"
+                android:layout_weight="1"
+                app:lineSpacing="@dimen/qb_px_8">
+
+            </cn.lankton.flowlayout.FlowLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/qb_px_100"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/txt_submit"
+                    android:layout_width="@dimen/qb_px_220"
+                    android:layout_height="@dimen/qb_px_50"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/sign_text_submit_bg_selector"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:text="保存"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</LinearLayout>

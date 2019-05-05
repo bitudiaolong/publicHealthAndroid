@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#39B4D1</color>
+    <color name="colorPrimaryDark">#39B4D1</color>
+    <color name="colorAccent">#e1d7db</color>
+    <color name="tab_unselect">#c9c9c9</color>
+    <color name="white">#ffffff</color>
+
+    <!-- 透明色 -->
+    <color name="transparent">#00000000</color>
+
+    <color name="black">#000000</color>
+    <color name="black_010101">#010101</color>
+    <color name="black_040404">#040404</color>
+    <color name="black_333333">#333333</color>
+
+
+    <color name="black_464646">#464646</color>
+    <color name="gray_969696">#969696</color>
+    <color name="gray_787878">#787878</color>
+    <color name="gray_8f8f8f">#8f8f8f</color>
+    <color name="gray_A8A8A8">#A8A8A8</color>
+    <color name="gray_d6d6d6">#d6d6d6</color>
+    <color name="gray_f3f2f2">#f3f2f2</color>
+    <color name="gray_BFBFBF">#BFBFBF</color>
+
+
+    <color name="blue_26B2CB">#26B2CB</color>
+
+    <color name="ml_gray">#ff9e9e9e</color>
+    <color name="ml_red">#ffff0000</color>
+    <color name="app_default_bg_color">#F3F3F3</color>
+    <color name="app_toolBar">#39B4D1</color>
+
+</resources>

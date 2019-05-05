@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_default_bg_color"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/status_bar_height"
+        android:background="@color/app_toolBar"></View>
+
+    <include layout="@layout/title_bar"></include>
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_default_bg_color"
+        app:srlEnableLoadMore="false"
+        app:srlEnableRefresh="false">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/ll_empty"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:layout_width="@dimen/qb_px_164"
+                        android:layout_height="@dimen/qb_px_112"
+                        android:layout_marginTop="@dimen/qb_px_100"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/bg_search_nodata" />
+
+                    <TextView
+                        android:id="@+id/txt_tips"
+                        style="@style/style_tv_d6d6d6_17sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/qb_px_12"
+                        android:text="正在请求..." />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/qb_px_8"
+                        android:background="@color/white"
+                        android:orientation="vertical"
+                        android:padding="@dimen/qb_px_12">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <View
+                                android:layout_width="@dimen/qb_px_3"
+                                android:layout_height="match_parent"
+                                android:background="@color/app_toolBar"></View>
+
+                            <TextView
+                                style="@style/text_style_sign_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/qb_px_4"
+                                android:text="甲方（服务者）" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txt_doctor_name"
+                            style="@style/text_style_sign_content"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="家庭医生：乔爱华" />
+
+                        <TextView
+                            android:id="@+id/txt_doctor_tuanduichengyuan"
+                            style="@style/text_style_sign_content"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="团队成员：黄球" />
+
+                        <TextView
+                            android:id="@+id/txt_doctor_phone"
+                            style="@style/text_style_sign_content"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="联系电话：18067885988" />
+
+                        <TextView
+                            android:id="@+id/txt_doctor_jigou"
+                            style="@style/text_style_sign_content"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="服务机构：河海街道社区服务中心" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lin_doctor_select"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/qb_px_8"
+                        android:background="@color/white"
+                        android:orientation="vertical"
+                        android:padding="@dimen/qb_px_12">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <View
+                                android:layout_width="@dimen/qb_px_3"
+                                android:layout_height="match_parent"
+                                android:background="@color/app_toolBar"></View>
+
+                            <TextView
+                                style="@style/text_style_sign_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/qb_px_4"
+                                android:text="乙方（服务对象）" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingBottom="@dimen/qb_px_12"
+                            android:paddingTop="@dimen/qb_px_12">
+
+                            <com.gc.basicpublicdoctor.widget.SignInfoAddLayout
+                                android:id="@+id/sign_info_base"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"></com.gc.basicpublicdoctor.widget.SignInfoAddLayout>
+
+                            <LinearLayout
+                                android:id="@+id/lin_user_base_info"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:id="@+id/txt_user_base_name"
+                                    style="@style/text_style_sign_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="姓名：张三" />
+
+                                <TextView
+                                    android:id="@+id/txt_user_base_sex"
+                                    style="@style/text_style_sign_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="性别：男" />
+
+                                <TextView
+                                    android:id="@+id/txt_user_base_birthday"
+                                    style="@style/text_style_sign_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="出生日期：dddd" />
+
+                                <TextView
+                                    android:id="@+id/txt_user_base_guanxi"
+                                    style="@style/text_style_sign_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="姓名：张三" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                        <View
+                            android:id="@+id/view_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/qb_px_1"
+                            android:background="@color/app_default_bg_color"></View>
+
+                        <LinearLayout
+                            android:id="@+id/lin_bohui"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:paddingBottom="@dimen/qb_px_12"
+                            android:paddingTop="@dimen/qb_px_12"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:layout_width="@dimen/qb_px_15"
+                                android:layout_height="@dimen/qb_px_18"
+                                android:layout_marginTop="@dimen/qb_px_4"
+                                android:src="@drawable/icon_bohui" />
+
+                            <TextView
+                                android:id="@+id/txt_bohui"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/qb_px_8"
+                                android:textColor="#333333"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lin_sign_info_clow"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingBottom="@dimen/qb_px_12"
+                            android:paddingTop="@dimen/qb_px_12">
+
+                            <com.gc.basicpublicdoctor.widget.SignInfoAddLayout
+                                android:id="@+id/sign_info_clow"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"></com.gc.basicpublicdoctor.widget.SignInfoAddLayout>
+
+                            <cn.lankton.flowlayout.FlowLayout
+                                android:id="@+id/flow_layout_clow"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:visibility="gone"
+                                app:lineSpacing="@dimen/qb_px_8">
+
+                            </cn.lankton.flowlayout.FlowLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/qb_px_1"
+                            android:background="@color/app_default_bg_color"></View>
+
+                        <LinearLayout
+                            android:id="@+id/lin_sign_info_server_pak"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingBottom="@dimen/qb_px_12"
+                            android:paddingTop="@dimen/qb_px_12">
+
+                            <com.gc.basicpublicdoctor.widget.SignInfoAddLayout
+                                android:id="@+id/sign_info_server_pak"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"></com.gc.basicpublicdoctor.widget.SignInfoAddLayout>
+
+
+                            <View
+                                android:id="@+id/view_line_header"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/qb_px_1"
+                                android:layout_marginTop="@dimen/qb_px_12"
+                                android:background="@color/app_default_bg_color"
+                                android:visibility="gone"></View>
+
+                            <LinearLayout
+                                android:id="@+id/ll_package_con"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                            </LinearLayout>
+
+
+                            <RelativeLayout
+                                android:id="@+id/ll_remarks"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingBottom="@dimen/qb_px_12"
+                                android:paddingTop="@dimen/qb_px_12"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:id="@+id/tv_remark_storage"
+                                    style="@style/text_style_sign_content"
+                                    android:layout_width="40dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:text="备注" />
+
+                                <TextView
+                                    android:id="@+id/txt_remarks"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/qb_px_12"
+                                    android:layout_marginRight="@dimen/qb_px_12"
+                                    android:layout_toRightOf="@+id/tv_remark_storage"
+                                    android:ellipsize="end"
+                                    android:gravity="right"
+                                    android:singleLine="true"
+                                    android:textColor="#7f333333"
+                                    android:textSize="16sp" />
+
+                            </RelativeLayout>
+
+                            <View
+                                android:id="@+id/view_line_foot"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/qb_px_1"
+                                android:background="@color/app_default_bg_color"
+                                android:visibility="gone"></View>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lin_select_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/qb_px_8"
+                        android:background="@color/white"
+                        android:orientation="vertical"
+                        android:padding="@dimen/qb_px_12">
+
+
+                        <RelativeLayout
+                            android:id="@+id/rel_sign_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true">
+
+                                <View
+
+                                    android:layout_width="@dimen/qb_px_3"
+                                    android:layout_height="match_parent"
+
+                                    android:background="@color/app_toolBar"></View>
+
+                                <TextView
+                                    android:id="@+id/txt1"
+                                    style="@style/text_style_sign_title"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+
+                                    android:text="签约时间" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:text="*"
+                                    android:textColor="#F41C26" />
+                            </LinearLayout>
+
+
+                            <TextView
+                                android:id="@+id/txt_sign_date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="@dimen/qb_px_24"
+                                android:text="2018-02-03" />
+
+                            <ImageView
+                                android:id="@+id/iv_time_arrow"
+                                android:layout_width="@dimen/qb_px_9"
+                                android:layout_height="@dimen/qb_px_17"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="@dimen/qb_px_12"
+                                android:src="@drawable/icon_right_raw" />
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lin_take_picture"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/qb_px_8"
+                        android:background="@color/white"
+                        android:orientation="vertical"
+                        android:padding="@dimen/qb_px_12">
+
+                        <TextView
+                            style="@style/text_style_sign_content"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="拍照" />
+
+                        <com.gc.basicpublicdoctor.widget.PictureListLayout
+                            android:id="@+id/take_picture"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/qb_px_6"
+                            android:layout_marginTop="@dimen/qb_px_6">
+
+                        </com.gc.basicpublicdoctor.widget.PictureListLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lin_sign"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/qb_px_8"
+                        android:background="@color/white"
+                        android:orientation="vertical"
+                        android:padding="@dimen/qb_px_12">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <View
+                                android:layout_width="@dimen/qb_px_3"
+                                android:layout_height="match_parent"
+                                android:background="@color/app_toolBar"></View>
+
+                            <TextView
+                                style="@style/text_style_sign_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/qb_px_4"
+                                android:text="居民签字区" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lin_sign_area"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/qb_px_124"
+                            android:layout_margin="@dimen/qb_px_12"
+                            android:background="@drawable/bg_sign_img"
+                            android:padding="@dimen/qb_px_12">
+
+                            <ImageView
+                                android:id="@+id/img_user_sign"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/qb_px_20"
+                        android:layout_marginTop="@dimen/qb_px_60">
+
+                        <TextView
+                            android:id="@+id/txt_submit"
+                            android:layout_width="@dimen/qb_px_220"
+                            android:layout_height="@dimen/qb_px_50"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/sign_text_submit_bg_selector"
+                            android:clickable="true"
+                            android:gravity="center"
+                            android:text="保存"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+
+        </ScrollView>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</LinearLayout>

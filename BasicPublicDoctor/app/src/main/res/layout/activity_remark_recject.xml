@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_default_bg_color"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".activity.RemarkRecjectActivity">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/status_bar_height"
+        android:background="@color/app_toolBar"></View>
+
+    <include
+        android:id="@+id/title"
+        layout="@layout/title_bar" />
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_default_bg_color"
+        app:srlEnableLoadMore="false"
+        app:srlEnableRefresh="false">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/edt_remarks"
+                style="@style/style_tv_333333_16sp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/qb_px_180"
+                android:layout_marginLeft="@dimen/qb_px_20"
+                android:layout_marginRight="@dimen/qb_px_20"
+                android:layout_marginTop="@dimen/qb_px_21"
+                android:background="@drawable/bg_sign_img"
+                android:gravity="start"
+                android:hint="请输入......"
+                android:maxLength="150"
+                android:paddingStart="@dimen/qb_px_10"
+                android:textColorHint="#969696"
+                android:textSize="16sp" />
+        </ScrollView>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</LinearLayout>

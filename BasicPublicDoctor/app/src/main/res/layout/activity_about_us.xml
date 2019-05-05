@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_default_bg_color"
+    android:orientation="vertical"
+    tools:context="com.gc.basicpublicdoctor.activity.WebViewActivity">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/status_bar_height"
+        android:background="@color/app_toolBar"></View>
+
+    <include
+        android:id="@+id/title"
+        layout="@layout/title_bar" />
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_default_bg_color"
+        app:srlEnableLoadMore="false"
+        app:srlEnableRefresh="false">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.gc.basicpublicdoctor.view.RoundImageView
+                    android:id="@+id/iv_logo"
+                    android:layout_width="@dimen/qb_px_108"
+                    android:layout_height="@dimen/qb_px_108"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/qb_px_61"
+                    android:src="@drawable/icon_app_logo"
+                    android:visibility="gone"
+                    app:border_color="@android:color/holo_blue_dark"
+                    app:border_width="0dp"
+                    app:corner_radius="10dp"
+                    app:type="round" />
+
+                <ImageView
+                    android:id="@+id/iv_logo1"
+                    android:layout_width="@dimen/qb_px_108"
+                    android:layout_height="@dimen/qb_px_108"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/qb_px_61"
+                    android:src="@drawable/icon_about_us" />
+
+                <TextView
+                    style="@style/style_tv_ffffff_17sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/qb_px_17"
+                    android:text="渐健家医-医生版" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_version"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/qb_px_53"
+                android:gravity="center_horizontal"
+                android:text="版本号：1.0.0"
+                android:textColor="#c8c8c8"
+                android:textSize="17sp" />
+        </RelativeLayout>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</LinearLayout>

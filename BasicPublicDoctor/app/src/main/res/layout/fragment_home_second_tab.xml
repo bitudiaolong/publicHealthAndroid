@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/status_bar_height"
+        android:background="@color/app_toolBar"></View>
+
+    <TextView
+        style="@style/style_white_title_textview"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/app_toolBar"
+        android:gravity="center"
+        android:text="咨询" />
+
+    <!--<com.scwang.smartrefresh.layout.SmartRefreshLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="@color/app_default_bg_color"-->
+        <!--app:srlEnableLoadMore="false"-->
+        <!--app:srlEnableRefresh="false">-->
+
+        <com.gc.basicpublicdoctor.view.NoScrollViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp" />
+    <!--</com.scwang.smartrefresh.layout.SmartRefreshLayout>-->
+    <!--<fragment-->
+    <!--android:id="@+id/conversation"-->
+    <!--android:name="io.rong.imkit.fragment.ConversationListFragment"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent" />-->
+</LinearLayout>

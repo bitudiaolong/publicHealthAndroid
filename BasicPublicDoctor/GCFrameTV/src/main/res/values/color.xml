@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="transparent">#00000000</color><!-- 透明色 -->
+    <color name="white">#FFFFFF</color><!-- 白色 -->
+    <!-- 视频播放器-->
+        <color name="mediacontroller_bg_pressed">#ff53c1bd</color>
+    <color name="mediacontroller_bg">#99000000</color>
+    
+    <color name="bg_news_detail_web">#28FFFFFF</color>
+</resources>

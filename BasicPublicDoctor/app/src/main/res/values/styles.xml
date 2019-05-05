@@ -1,0 +1,188 @@
+﻿<resources>
+
+    <!-- Base application theme. -->
+    <!--<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">-->
+    <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+    <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+    <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+    <!--<item name="colorAccent">@color/colorAccent</item>-->
+    <!--</style>-->
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorPrimaryDark</item>
+    </style>
+
+    <!--dialog加载-->
+    <style name="AlertDialogMine" parent="@android:style/Theme.Dialog">
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowFrame">@null</item><!--边框-->
+        <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">true</item><!--半透明-->
+        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowBackground">@color/transparent</item>
+    </style>
+
+    <!--首页-->
+    <!--顶部标题栏文字大小颜色-->
+    <style name="style_white_common_textview">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <!--顶部标题栏文字大小颜色-->
+    <style name="style_white_title_textview">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:padding">0sp</item>
+    </style>
+    <!--首页顶部三模块 黑色字体15sp-->
+    <style name="style_tv_000000_15sp">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:padding">0sp</item>
+    </style>
+    <!--首页中间四模块 白色字体22sp-->
+    <style name="style_tv_ffffff_22sp">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:padding">0sp</item>
+    </style>
+    <!--首页中间四模块 白色字体15sp-->
+    <style name="style_tv_ffffff_15sp">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:padding">0sp</item>
+    </style>
+    <!--首页底部新闻资讯 黑色字体15sp-->
+    <style name="style_tv_black_010101_15sp">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/black_010101</item>
+        <item name="android:padding">0sp</item>
+    </style>
+    <!--首页底部新闻资讯 灰色字体14sp-->
+    <style name="style_tv_gray_969696_14sp">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/gray_969696</item>
+        <item name="android:padding">0sp</item>
+    </style>
+
+    <!--我的-->
+    <!--我的 白色字体22sp-->
+    <style name="style_tv_ffffff_14sp">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:padding">0sp</item>
+    </style>
+    <!--我的 黑色字体16sp-->
+    <style name="style_tv_000000_16sp">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:padding">0sp</item>
+    </style>
+    <!--我的 黑色字体17sp-->
+    <style name="style_tv_ffffff_17sp">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:padding">0sp</item>
+    </style>
+    <!--我的 灰色字体13sp-->
+    <style name="style_tv_8f8f8f_13sp">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/gray_8f8f8f</item>
+        <item name="android:padding">0sp</item>
+    </style>
+
+    <!--登录-->
+    <!--登录 白色字体18sp-->
+    <style name="style_tv_ffffff_18sp">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:padding">0sp</item>
+    </style>
+
+    <!--签约列表-->
+    <!--签约列表 黑色字体16sp-->
+    <style name="style_tv_040404_16sp">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black_040404</item>
+        <item name="android:padding">0sp</item>
+    </style>
+    <!--签约列表 灰色字体16sp-->
+    <style name="style_tv_787878_16sp">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/gray_787878</item>
+        <item name="android:padding">0sp</item>
+    </style>
+
+    <!--签约-->
+    <style name="text_style_sign_content">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#333333</item>
+        <item name="android:layout_marginTop">6dp</item>
+    </style>
+    <!--签约 加粗-->
+    <style name="text_style_sign_title">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginLeft">@dimen/qb_px_4</item>
+    </style>
+
+    <!--随访记录 黑色字体16sp-->
+    <style name="style_tv_333333_16sp">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black_333333</item>
+        <item name="android:padding">0sp</item>
+    </style>
+
+    <!--随访记录 黑色字体17sp-->
+    <style name="style_tv_333333_17sp">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/black_333333</item>
+        <item name="android:padding">0sp</item>
+    </style>
+
+    <!--人群列表_姓名 纯黑色字体19sp-->
+    <style name="style_tv_000000_19sp">
+        <item name="android:textSize">19sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:padding">0sp</item>
+    </style>
+
+    <!--人群列表_年龄，手机，详细地址 黑色字体19sp-->
+    <style name="style_tv_464646_16sp">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black_464646</item>
+        <item name="android:padding">0sp</item>
+    </style>
+
+    <!--筛选按钮颜色 灰色字体19sp-->
+    <style name="style_tv_A8A8A8_16sp">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/gray_A8A8A8</item>
+        <item name="android:padding">0sp</item>
+    </style>
+
+    <!--签约管理搜索无数据 灰色字体17sp-->
+    <style name="style_tv_d6d6d6_17sp">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/gray_d6d6d6</item>
+        <item name="android:padding">0sp</item>
+    </style>
+
+    <!--tablayout字体大小-->
+    <style name="tab_appearance">
+        <item name="android:textSize">16sp</item>
+    </style>
+    <!--radiobutton样式-->
+    <style name="CustomRadioBtn">
+        <item name="android:button">@drawable/selector_radiobutton</item>
+    </style>
+    <!--checkBox样式-->
+    <style name="CustomSelectServiceCheckBox" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/select_service_chenkbox_selector</item>
+    </style>
+</resources>
